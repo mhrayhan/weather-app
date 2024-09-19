@@ -1,17 +1,13 @@
 import "./App.css";
-import { WeatherProvider } from "./provider";
+import Page from "./Page";
+import { FavouriteProvider, WeatherProvider } from "./provider";
 
 function App() {
   return (
     <WeatherProvider>
-      {/* <div className="grid place-items-center h-screen">
-        <Header></Header>
-        <main>
-          <section>
-            <WeatherBoard></WeatherBoard>
-          </section>
-        </main>
-      </div> */}
+      <FavouriteProvider>
+        <Page></Page>
+      </FavouriteProvider>
     </WeatherProvider>
   );
 }
