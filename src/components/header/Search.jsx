@@ -1,6 +1,11 @@
+import { useState } from "react";
 import SearchIcon from "../../assets/search.svg";
 
+
 const Search = () => {
+
+  const [searchTerm, setSearchTerm]= useState('')
+  console.log(searchTerm);
   return (
     <form action="#">
       <div className="flex items-center space-x-2 py-2 px-3 group focus-within:bg-black/30 transition-all border-b border-white/50 focus-within:border-b-0 focus-within:rounded-md">
@@ -9,6 +14,7 @@ const Search = () => {
           type="search"
           placeholder="Search Location"
           required
+          onChange={(e)=> setSearchTerm(e.target.value)}
         />
         <button type="submit">
           <img src={SearchIcon} />
