@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import RedHeart from "../../assets/heart-red.svg";
-import { FavouriteContext } from "../../context";
+import { FavouriteContext, LocationContext } from "../../context";
 
 const FavouriteModal = () => {
   const { favourites } = useContext(FavouriteContext);
+  const { setSelectedLocation } = useContext(LocationContext);
   return (
     <div className="max-w-xs py-4 bg-white rounded-md border-gray-500 absolute right-0 top-16 text-black shadow-lg ">
       <h3 className="text-lg font-bold px-4">Favourite Locations</h3>
@@ -14,8 +15,9 @@ const FavouriteModal = () => {
               key={fav.location}
               className="hover:bg-gray-200 flex place-items-center"
             >
-              <img src={RedHeart} alt="" />
-              {fav.location}
+              <a onClick={() => setSelectedLocation({ ...fav })}>
+                {fav.location}
+              </a>
             </li>
           ))
         ) : (
