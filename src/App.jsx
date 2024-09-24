@@ -11,7 +11,7 @@ function App() {
     <LocationProvider>
       <WeatherProvider>
         <FavouriteProvider>
-          <Page></Page>
+          <Page />
         </FavouriteProvider>
       </WeatherProvider>
     </LocationProvider>
