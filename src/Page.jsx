@@ -48,7 +48,7 @@ const Page = () => {
     <>
       {loading.state ? (
         <p className="text-3xl p-6 bg-slate-300 w-fit font-bold mt-4 mx-auto ">
-          Finding Location...
+          {loading.message}
         </p>
       ) : (
         <div
